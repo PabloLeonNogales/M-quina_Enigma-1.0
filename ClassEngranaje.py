@@ -39,7 +39,7 @@ class Engranaje():
     # Entra un letra y sale otra para el reflector.
     def codiEngranaje(self, letra):
         self.rotores[0].avanza()
-        if self.lenRotores >1:
+        if self.lenRotores > 1:
             self.controlAvance()
         for i in range(0, self.lenRotores):
             a = self.rotores[i].codifica(letra)
@@ -65,15 +65,16 @@ if __name__ == '__main__':
 
     r1 = Rotor(rotor = ENGROTOR1)
     r2 = Rotor(rotor = ENGROTOR2)
-    r3 = Rotor(rotor = ENGROTOR3)
+    r3 = Rotor(rotor = ENGROTOR3, letraInicial = 'Y')
     r4 = Rotor(rotor = ENGROTOR4)
     r5 = Rotor(rotor = ENGROTOR5)
     s1 = Reflector(reflector=ENGREFLECTORB)
 
-    rr=Engranaje(r1,r2,r3,r4,r5)
+    rr=Engranaje(r3, r2)
     letra = input('¿Qué letra o frase (sin espacios) quieres codificar? ')
     for i in letra:
         print (rr.codiEngranaje(i))
+        print (r3.iRotor)
     letra = input('¿Qué letra o frase (sin espacios) quieres decodificar? ')
     for i in letra:
         print (rr.decodiEngranaje(i))

@@ -30,13 +30,13 @@ if __name__ == '__main__':
 
     r1 = Rotor(rotor = ENGROTOR1)
     r2 = Rotor(rotor = ENGROTOR2)
-    r3 = Rotor(rotor = ENGROTOR3)
+    r3 = Rotor(rotor = ENGROTOR3, letraInicial = 'Y')
     r4 = Rotor(rotor = ENGROTOR4)
     r5 = Rotor(rotor = ENGROTOR5)
     s1 = Reflector(reflector=ENGREFLECTORB)
 
     rr=Enigma(s1,r3,r2,r1)
-
+    print(r3.iRotor)
 
     letra = input('¿Qué letra o frase (sin espacios) quieres pulsar? ')
     for n in letra:

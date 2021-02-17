@@ -10,9 +10,9 @@ class Rotor():
         self.letraInicial = letraInicial
         self.pos0C = self.pos0[:]                               # Pos0 en movimiento
         self.rotorC = self.rotor[:]                             # Rotor en movimiento
+        self.iRotor = 0
         if letraInicial != 'A':
             self.posicionInicial(self.letraInicial)   
-        self.iRotor = 0
     
     def __str__(self):
         cadena = 'Rotor' 
@@ -25,6 +25,7 @@ class Rotor():
         value = self.abecedario.index(letra)
         self.rotorC = self.rotor[value:] + self.rotor[:value]
         self.pos0C = self.pos0[value:] + self.pos0[:value]
+        self.iRotor = value
 
     # Cuando presionamos una tecla, el rotor avanza una posición. 
     # Esta función hace precisamente eso.
@@ -72,7 +73,9 @@ if __name__ == '__main__':
     r.avanza(2)
     print(r.codifica('P'))
     print(r.decodifica('A'))
+    print(r.iRotor)
 
     r.retrocede(4)
     print(r.codifica('P'))
     print(r.decodifica('A'))
+    print(r.iRotor)
